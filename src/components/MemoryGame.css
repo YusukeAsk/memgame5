@@ -1,0 +1,120 @@
+.memory-game {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.moves-counter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.reset-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+}
+
+.win-message {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: bounce 0.5s ease;
+}
+
+.win-message h2 {
+  font-size: 2rem;
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.win-message p {
+  font-size: 1.5rem;
+  color: #764ba2;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .game-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .moves-counter {
+    font-size: 1.2rem;
+  }
+  
+  .reset-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  
+  .win-message h2 {
+    font-size: 1.5rem;
+  }
+  
+  .win-message p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
