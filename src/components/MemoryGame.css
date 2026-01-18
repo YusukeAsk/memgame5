@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #ffffff;
 }
 
 .game-info {
@@ -13,15 +14,15 @@
   width: 100%;
   margin-bottom: 20px;
   padding: 15px;
-  background: rgba(255, 255, 255, 0.9);
+  background: #f5f5f5;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 4px solid #000000;
 }
 
 .moves-counter {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #667eea;
+  color: #000000;
 }
 
 .reset-button {
@@ -29,12 +30,11 @@
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
+  background: #ff69b4;
+  border: 4px solid #000000;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 }
 
 .reset-button:hover {
@@ -50,21 +50,89 @@
   text-align: center;
   padding: 30px;
   margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.95);
+  background: #ffffff;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 4px solid #000000;
   animation: bounce 0.5s ease;
 }
 
 .win-message h2 {
   font-size: 2rem;
-  color: #667eea;
+  color: #ff69b4;
   margin-bottom: 10px;
 }
 
 .win-message p {
   font-size: 1.5rem;
-  color: #764ba2;
+  color: #000000;
+}
+
+.win-message .new-record {
+  font-size: 1.3rem;
+  color: #ff69b4;
+  margin-top: 10px;
+  font-weight: bold;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.records-section {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 15px;
+  border: 4px solid #000000;
+}
+
+.records-section h3 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.records-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.record-item {
+  padding: 10px 15px;
+  background: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: #000000;
+  text-align: center;
+}
+
+.record-item.best-record {
+  background: #ff69b4;
+  color: #ffffff;
+  font-weight: bold;
+  animation: highlight 0.5s ease;
+}
+
+@keyframes highlight {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes bounce {
@@ -79,14 +147,17 @@
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 15px;
   width: 100%;
   max-width: 600px;
+  height: auto;
 }
 
 @media (max-width: 768px) {
   .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 10px;
   }
   
@@ -115,6 +186,7 @@
 
 @media (max-width: 480px) {
   .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 }
